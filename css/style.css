@@ -177,6 +177,18 @@
   border: none;
 }
 
+.contenitore-msgInv{
+  display: flex;
+  justify-content: flex-end;
+  margin: 4px 90px 0 0;
+}
+.msg-utente{
+  max-width: 50%;
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #dcf8c6;
+}
 
 
 /* testo non visibile in pagina */
