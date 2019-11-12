@@ -10,7 +10,7 @@ function invioMsg() {
   var elementClon = $(".template .contenitore-msgInv").clone();
   // console.log(elementMsg);
 
-
+  // con la funzione find aggiungo un altro elemento HTML dopo quello clonato e inserisco il messaggio dell'input
   elementClon.find(".msg-utente").text(messaggio);
 
   // adesso stampo in pagina con la funzione append
