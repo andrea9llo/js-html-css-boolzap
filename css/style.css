@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family:  "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
 }
 
 /* app WhatsApp */
@@ -174,6 +175,13 @@
   padding: 15px;
   border-radius: 15px;
   border: none;
+}
+
+
+
+/* testo non visibile in pagina */
+.template{
+  display: none;
 }
 
 
