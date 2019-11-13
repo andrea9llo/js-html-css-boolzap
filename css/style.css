@@ -176,11 +176,11 @@
   border-radius: 15px;
   border: none;
 }
-
+/* msg inviato */
 .contenitore-msgInv{
   display: flex;
   justify-content: flex-end;
-  margin: 4px 90px 0 0;
+  margin: 4px 80px 0 0;
 }
 .msg-utente{
   max-width: 50%;
@@ -188,8 +188,25 @@
   padding: 10px;
   border-radius: 15px;
   background-color: #dcf8c6;
+  box-shadow: 0 1px 0.5px rgba(0,0,0,.13);
+  word-wrap: break-word;
 }
 
+/* msg ricevuto */
+.contenitore-msgPc{
+  display: flex;
+  justify-content: flex-start;
+  margin: 4px 0 0 80px;
+}
+.msg-pc{
+  max-width: 50%;
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 0 1px 0.5px rgba(0,0,0,.13);
+  word-wrap: break-word;
+}
 
 /* testo non visibile in pagina */
 .template{

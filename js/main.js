@@ -18,9 +18,23 @@ function invioMsg() {
 
   // per ultima cosa pulisco sempre l'input
   $(".text-msg").val("");
+
+
+  // inserisco la funzione setTimeout per ricevere un ok come risposta dopo un secondo
+  setTimeout(msgRicevuto,1000);
 }
 
+// creo la funzione per ricevere sempre lo stesso msg
+function msgRicevuto() {
+  // uso sempre la funzione clone per clonare la classe html che mi serve per poi stampare in pagina il msg
+  var elementClonPc = $(".template .contenitore-msgPc").clone();
 
+  // con find trovo l emento html dopo quello clonato e aggiungo il testo dell risposta
+  elementClonPc.find(".msg-pc").text("ok");
+
+  // adesso stampo in pagina il testo
+  $(".msg-chat").append(elementClonPc);
+}
 
 $( document ).ready( function (){
 
@@ -33,6 +47,10 @@ $( document ).ready( function (){
   if (k.keyCode == "13") {
     invioMsg();
   }
+
+  $('.msg-chat').scrollTop($('.msg-chat')[0].scrollHeight);
+
+
 })
 
 
