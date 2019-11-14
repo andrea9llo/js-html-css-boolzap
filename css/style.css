@@ -140,6 +140,20 @@
   width: 8%;
   height: 100%;
 }
+/* nascondiamo le parti che non si devono vedere */
+.img-chat>img,
+.utente-chat,
+.msg-chat{
+  display: none;
+}
+/* facciamo vedere solo cio che serve  */
+.img-chat>img.active,
+.utente-chat.active,
+.msg-chat.active{
+  display: inline-block;
+}
+
+/*  */
 .utente-chat{
   flex-grow: 1;
 }
@@ -153,7 +167,7 @@
   cursor: pointer;
 }
 .msg-chat{
-  flex-grow: 1;
+  height: calc(100% - 65px - 65px);
   background-image: url("../img/sfondoapp.jpg");
   overflow-y: scroll;
 }

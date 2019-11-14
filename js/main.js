@@ -14,7 +14,7 @@ function invioMsg() {
   elementClon.find(".msg-utente").text(messaggio);
 
   // adesso stampo in pagina con la funzione append
-  $(".msg-chat").append(elementClon);
+  $(".msg-chat.active").append(elementClon);
 
   // per ultima cosa pulisco sempre l'input
   $(".text-msg").val("");
@@ -22,6 +22,9 @@ function invioMsg() {
 
   // inserisco la funzione setTimeout per ricevere un ok come risposta dopo un secondo
   setTimeout(msgRicevuto,1000);
+
+  // lo scroll avviene automatico
+  $('.msg-chat').scrollTop($('.msg-chat')[0].scrollHeight);
 }
 
 // creo la funzione per ricevere sempre lo stesso msg
@@ -33,7 +36,9 @@ function msgRicevuto() {
   elementClonPc.find(".msg-pc").text("ok");
 
   // adesso stampo in pagina il testo
-  $(".msg-chat").append(elementClonPc);
+  $(".msg-chat.active").append(elementClonPc);
+
+  $('.msg-chat').scrollTop($('.msg-chat')[0].scrollHeight);
 }
 
 $( document ).ready( function (){
@@ -49,7 +54,7 @@ $( document ).ready( function (){
     }
   })
 
-  $('.msg-chat').scrollTop($('.msg-chat')[0].scrollHeight);
+
 
   // Ricerca utenti: scrivendo qualcosa nell’input a sinistra,
   // vengono visualizzati solo i contatti il cui nome contiene le lettere inserite
@@ -77,6 +82,23 @@ $( document ).ready( function (){
   })
 
 
+  // sullo step 1 sarà da lasciare selezionato il contatto, la chat cambia, e cambiano anche le info dell’header della chat,
+  // e se scrivo un msg, sarà inserito in quella chat e quella solamente;
+  $(".utenti-chat").click(function(){
+    $(".utenti-chat").css("background-color", "");
+    $(this).css("background-color", "rgba(0, 0, 0, 0.3)");
+    // mi salvo la variabile cosi mi ritorna il valore dell'attributo
+    var clickUt = $(this).attr("data-ref");
+    // rimuovo la classe active su tutte
+    $(".msg-chat.active").removeClass("active");
+    $(".utente-chat.active").removeClass("active");
+    $(".img-chat>img.active").removeClass("active");
+
+    // aggiungo la classe activ su tutte le classi che hanno l'attributo uguale a quello salvato
+    $("img[data-ref ="+ clickUt +" ]").addClass("active");
+    $(".utente-chat[data-ref ="+ clickUt +" ]").addClass("active");
+    $(".msg-chat[data-ref ="+ clickUt +" ]").addClass("active");
+  })
 
 
 
