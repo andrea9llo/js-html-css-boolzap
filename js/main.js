@@ -42,16 +42,41 @@ $( document ).ready( function (){
   $("#invio").click(invioMsg);
 
   // al tasto enter invio il messaggio
-  $(document).keyup(function(k){
+  $(".text-msg").keyup(function(k){
 
-  if (k.keyCode == "13") {
-    invioMsg();
-  }
+    if (k.keyCode == "13") {
+      invioMsg();
+    }
+  })
 
   $('.msg-chat').scrollTop($('.msg-chat')[0].scrollHeight);
 
+  // Ricerca utenti: scrivendo qualcosa nell’input a sinistra,
+  // vengono visualizzati solo i contatti il cui nome contiene le lettere inserite
+  $(".ricerca").keyup(function(event){
 
-})
+    // mi salvo una variabile un cui salvo lo stato delle lettere inserite nell'input e converto le maiuscole in minuscole
+    var lettereIns = $(this).val().toLowerCase();
+    // console.log(lettereIns);
+
+    // uno each per ciclare tutti i nomi nella lista
+    $(".utenti-chat").each(function(){
+
+      // creo una variabile per il nome che deve cercare
+      var nomeTrovato = $(this).find(".nomilat").text().toLowerCase();
+      // console.log(nomeTrovato);
+
+      if (nomeTrovato.includes(lettereIns)) {
+        $(this).show();
+      } else {
+         $(this).hide();
+      }
+
+    })
+
+  })
+
+
 
 
 

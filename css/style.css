@@ -74,7 +74,7 @@
   background-color: #eee;
   color: #a0a0a0;
 }
-.input-nomi>input{
+.ricerca{
   width: 80%;
   padding: inherit;
   border: none;
@@ -108,7 +108,7 @@
   flex-basis: 20%;
 }
 .avatar {
-  height: 100%;
+  height: 55px;
 }
 .nomi{
   flex-basis: 70%;
