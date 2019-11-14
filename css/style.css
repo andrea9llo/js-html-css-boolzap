@@ -223,7 +223,7 @@
 }
 
 /* testo non visibile in pagina */
-.template{
+.template,.dropdown{
   display: none;
 }
 

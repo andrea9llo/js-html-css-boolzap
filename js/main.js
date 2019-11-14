@@ -101,5 +101,15 @@ $( document ).ready( function (){
   })
 
 
+  $( ".msg-chat" ).on( "click", "i", function( event ){
+
+    $(".dropdown",this).toggle();
+    $(".delete").click(function(){
+        $(".contenitore-msgInv").detach();
+
+    })
+  });
+
+
 
 })
