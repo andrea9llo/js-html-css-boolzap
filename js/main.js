@@ -55,7 +55,6 @@ $( document ).ready( function (){
   })
 
 
-
   // Ricerca utenti: scrivendo qualcosa nell’input a sinistra,
   // vengono visualizzati solo i contatti il cui nome contiene le lettere inserite
   $(".ricerca").keyup(function(event){
@@ -103,13 +102,13 @@ $( document ).ready( function (){
 
   $( ".msg-chat" ).on( "click", "i", function( event ){
 
-    $(".dropdown",this).toggle();
-    $(".delete").click(function(){
-        $(".contenitore-msgInv").detach();
+    $(this).find(".dropdown").toggle();
 
-    })
   });
+  $( ".msg-chat" ).on( "click", ".delete",function(){
+      $(this).parents(".contenitore-msgInv").remove();
 
+  })
 
 
 })

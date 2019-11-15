@@ -184,6 +184,11 @@
   color: rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
+
+#invio{
+  display: none;
+}
+
 .text-msg{
   width: 90%;
   padding: 15px;
@@ -195,11 +200,12 @@
   display: flex;
   justify-content: flex-end;
   margin: 4px 80px 0 0;
+  position: relative;
 }
 .msg-utente{
   max-width: 50%;
   font-size: 14px;
-  padding: 10px;
+  padding: 10px 35px 10px 10px;
   border-radius: 15px;
   background-color: #dcf8c6;
   box-shadow: 0 1px 0.5px rgba(0,0,0,.13);
@@ -215,13 +221,32 @@
 .msg-pc{
   max-width: 50%;
   font-size: 14px;
-  padding: 10px;
+  padding: 10px 35px 10px 10px;
   border-radius: 15px;
   background-color: #fff;
   box-shadow: 0 1px 0.5px rgba(0,0,0,.13);
   word-wrap: break-word;
 }
-
+.drop{
+  position: absolute;
+  top: 4px;
+  right: 7px;
+  color: rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+.dropdown{
+  background: white;
+  padding: 6px;
+  font-weight: initial;
+  font-size: 13px;
+  position: absolute;
+  top: 22px;
+  right: -30px;
+  color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 0.5px rgba(0,0,0,.13);
+  z-index: 100;
+  cursor: pointer;
+}
 /* testo non visibile in pagina */
 .template,.dropdown{
   display: none;
